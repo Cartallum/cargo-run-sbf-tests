@@ -1,0 +1,29 @@
+[package]
+name = "run-sbf-tests"
+description = "Blockchain, Rebuilt for Scale"
+version = "1.15.0"
+documentation = "https://docs.cartallum.com/cbe"
+homepage = "https://cartallum.com/"
+readme = "README.md"
+repository = "https://github.com/Cartallum/cargo-run-sbf-tests"
+authors = ["Cartallum Maintainers <maintainers@cartallum.com>"]
+license = "Apache-2.0"
+edition = "2018"
+publish = false
+
+[dependencies]
+regex = "1.4.5"
+structopt = { version = "0.3", default-features = false }
+anyhow = "1.0"
+cbe-bpf-loader-program = { git = "https://github.com/Cartallum/cbc-testnet" }
+cbe-logger = { git = "https://github.com/Cartallum/cbc-testnet" }
+cbe-program-runtime = { git = "https://github.com/Cartallum/cbc-testnet" }
+cbe-sdk = { git = "https://github.com/Cartallum/cbc-testnet" }
+cbe_rbpf = "=0.2.38"
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]
+
+[[bin]]
+name = "cargo-run-sbf-tests"
+path = "src/main.rs"
